@@ -52,9 +52,9 @@ class HBNBCommand(cmd.Cmd):
                         arg_edit = args[1].replace("_", " ")
                         arg_final = arg_edit.replace("\"", "")
 
-                        if "." in args[1]:
+                        if isinstance(arg_final, float):
                             arg_final = float(args[1])
-                        elif "\"" not in args[1]:
+                        elif isinstance(arg_final, int):
                             arg_final = int(args[1])
 
                         if hasattr(obj, args[0]):
