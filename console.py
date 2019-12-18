@@ -50,7 +50,7 @@ class HBNBCommand(cmd.Cmd):
                     if i != 1:
                         args = argu.split("=")
                         arg_edit = args[1].replace("_", " ")
-                        arg_final = arg_edit.replace("\"", " ")
+                        arg_final = arg_edit.replace("\"", "")
 
                         if "." in args[1]:
                             arg_final = float(args[1])
