@@ -41,13 +41,13 @@ class DBStorage:
             for clas in class_list:
                 objs = self.__session.query(clas).all()
                 for obj in objs:
-                    key = obj.__class__.__name__ + '.' + obj.id
+                    key = obj.to_dict()['__class__'] + '.' + obj.id
                     dict_[key] = obj
         else:
             objs = self.__session.query(cls).all()
 
             for obj in objs:
-                key = obj.__class__.__name__ + '.' + obj.id
+                key = obj.to_dict()['__class__'] + '.' + obj.id
                 dict_[key] = obj
 
         return dict_

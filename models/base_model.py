@@ -49,6 +49,7 @@ class BaseModel:
         Return:
             returns a string of class name, id, and dictionary
         """
+        del self.__dict__["_sa_instance_state"]
         return "[{}] ({}) {}".format(
             type(self).__name__, self.id, self.__dict__)
 
