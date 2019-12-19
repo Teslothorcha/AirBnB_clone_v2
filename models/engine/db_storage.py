@@ -34,7 +34,7 @@ class DBStorage:
             Base.metadata.drop_all(self.__engine)
 
     def all(self, cls=None):
-        class_list = [State, City, User]
+        class_list = [State, City, User, Place]
         dict_ = {}
 
         if cls is None:
