@@ -220,18 +220,18 @@ Update __init__.py: (models/__init__.py)
 We updated User: (models/user.py):
 * User inherits from BaseModel and Base (respect the order)
 * Add or replace in the class User:
-    * class attribute __tablename__
+    * class attribute `__tablename__`
         * represents the table name, users
-    * class attribute email
+    * class attribute `email`
         * represents a column containing a string (128 characters)
         * can’t be null
-    * class attribute password
+    * class attribute `password`
         * represents a column containing a string (128 characters)
         * can’t be null
-    * class attribute first_name
+    * class attribute `first_name`
         * represents a column containing a string (128 characters)
         * can be null
-    * class attribute last_name
+    * class attribute `last_name`
         * represents a column containing a string (128 characters)
         * can be null
 	
@@ -260,7 +260,7 @@ We updated Place: (models/place.py)
         * represents a column containing an integer
         * can’t be null
         * default value: 0
-    * class attribute number_bathrooms
+    * class attribute `number_bathrooms`
         * represents a column containing an integer
         * can’t be null
         * default value: 0
