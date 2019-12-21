@@ -237,7 +237,7 @@ We updated User: (models/user.py):
 	
 ### DBStorage - Place
 
-Update Place: (models/place.py)
+We updated Place: (models/place.py)
 * Place inherits from BaseModel and Base (respect the order)
 * Add or replace in the class Place:
     * class attribute __tablename__
@@ -278,7 +278,7 @@ Update Place: (models/place.py)
     * class attribute longitude
         * represents a column containing a float
         * can be null
-Update User: (models/user.py)
+We updated User: (models/user.py)
 * Add or replace in the class User:
     * class attribute places must represent a relationship with the class Place. If the User object is deleted, all linked Place objects must be automatically deleted. Also, the reference from a Place object to his User should be named user
 Update City: (models/city.py)
@@ -288,7 +288,7 @@ Update City: (models/city.py)
 ### DBStorage - Review
 
 
-Update Review: (models/review.py)
+We updated Review: (models/review.py)
 * Review inherits from BaseModel and Base (respect the order)
 * Add or replace in the class Review:
     * class attribute __tablename__
@@ -304,7 +304,7 @@ Update Review: (models/review.py)
         * represents a column containing a string (60 characters)
         * can’t be null
         * is a foreign key to users.id
-Update User: (models/user.py)
+we updated User: (models/user.py)
 * Add or replace in the class User:
     * class attribute reviews must represent a relationship with the class Review. If the User object is deleted, all linked Review objects must be automatically deleted. Also, the reference from a Review object to his User should be named user
 Update Place: (models/place.py)
@@ -313,7 +313,7 @@ Update Place: (models/place.py)
 
 ### DBStorage - Amenity... and BOOM!
 
-Update Amenity: (models/amenity.py)
+We updated Amenity: (models/amenity.py)
 * Amenity inherits from BaseModel and Base (respect the order)
 * Add or replace in the class Amenity:
     * class attribute __tablename__
