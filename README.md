@@ -149,27 +149,27 @@ Update BaseModel: `(models/base_model.py)`
         * represents a column containing a datetime
         * can’t be null
         * default value is the current datetime (use datetime.utcnow())
-* Move the models.storage.new(self) from def __init__(self, *args, **kwargs): to def save(self): and call it just before models.storage.save()
-* In def __init__(self, *args, **kwargs):, manage kwargs to create instance attribute from this dictionary. Ex: kwargs={ 'name': "California" } => self.name = "California" if it’s not already the case
-* Update the to_dict() method of the class BaseModel:
-    * remove the key _sa_instance_state from the dictionary returned by this method only if this key exists
-* Add a new public instance method: def delete(self): to delete the current instance from the storage (models.storage) by calling the method delete
+* Move the `models.storage.new(self)` from def `__init__(self, *args, **kwargs):` to `def save(self):` and call it just before models.storage.save()
+* In `def __init__(self, *args, **kwargs):`, manage kwargs to create instance attribute from this dictionary. Ex: `kwargs={ 'name': "California" }` => `self.name = "California"` if it’s not already the case
+* Update the `to_dict()` method of the class `BaseModel`:
+    * remove the key `_sa_instance_state` from the dictionary returned by this method only if this key exists
+* Add a new public instance method: `def delete(self):` to delete the current instance from the storage (`models.storage`) by calling the method delete
 Update City: (models/city.py)
 * City inherits from BaseModel and Base (respect the order)
 * Add or replace in the class City:
-    * class attribute __tablename__ -
+    * class attribute `__tablename__` -
         * represents the table name, cities
     * class attribute name
         * represents a column containing a string (128 characters)
         * can’t be null
-    * class attribute state_id
+    * class attribute `state_id`
         * represents a column containing a string (60 characters)
         * can’t be null
         * is a foreign key to states.id
 Update State: (models/state.py)
 * State inherits from BaseModel and Base (respect the order)
 * Add or replace in the class State:
-    * class attribute __tablename__
+    * class attribute `__tablename__`
         * represents the table name, states
     * class attribute name
         * represents a column containing a string (128 characters)
