@@ -187,10 +187,10 @@ New engine DBStorage: (models/engine/db_storage.py)
             * dialect: mysql
             * driver: mysqldb
         * all of the following values must be retrieved via environment variables:
-            * MySQL user: HBNB_MYSQL_USER
-            * MySQL password: HBNB_MYSQL_PWD
-            * MySQL host: HBNB_MYSQL_HOST (here = localhost)
-            * MySQL database: HBNB_MYSQL_DB
+            * MySQL user: `HBNB_MYSQL_USER`
+            * MySQL password: `HBNB_MYSQL_PWD`
+            * MySQL host: `HBNB_MYSQL_HOST` (here = localhost)
+            * MySQL database: `HBNB_MYSQL_DB`
         * don’t forget the option pool_pre_ping=True when you call create_engine
         * drop all tables if the environment variable HBNB_ENV is equal to test
     * all(self, cls=None):
@@ -325,7 +325,7 @@ We updated Amenity: (models/amenity.py)
 Update Place: (models/place.py)
 * Add an instance of SQLAlchemy Table called place_amenity for creating the relationship Many-To-Many between Place and Amenity:
     * table name place_amenity
-    * metadata = Base.metadata
+    * metadata = `Base.metadata`
     * 2 columns:
         * place_id, a string of 60 characters foreign key of places.id, primary key in the table and never null
         * amenity_id, a string of 60 characters foreign key of amenities.id, primary key in the table and never null
