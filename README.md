@@ -9,6 +9,10 @@ the Holberton Airbnb clone project, that can be used to store objects in and
 retrieve objects from a JSON, but also it will has the possible to switch the
 storage engine and use SQLAlchemy.
 
+We have learned how to manage a console which classes allows us
+to handle information like Users, places, states, cities and others ones by
+changing the engine storage with SQLAlchemy.
+
 ### Supported classes:
 * BaseModel
 * User
@@ -59,3 +63,11 @@ Ex:
 Additionally, the console supports `<class name>.<command>(<parameters>)` syntax.
 Ex:
 `City.show(my_city_id)`
+
+## Specific improvements
+
+### Authors
+
+ - [Kevin Yook] (https://github.com/yook00627)
+ - [Juan David Marín](https://github.com/Teslothorcha) - 939@holbertonschool.com
+ - [Doniben Jimenez](https://github.com/Doniben) - 921@holbertonschool.com
