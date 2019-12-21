@@ -1,6 +1,13 @@
-# HBNB
-A
-This is the console /command interpreter for the Holberton Airbnb clone project. The console can be used to store objects in and retrieve objects from a JSON.
+# AirBnB_clone_v2
+The goal of the project is to deploy on your server a simple copy of the AirBnB website.
+# <a href="https://ibb.co/n0F13LS"><img src="https://www.pngkey.com/png/full/60-605967_airbnb-logo-png.png" alt="Sin-ti-tulo-1" width="100" height="80" border="0"></a> Airbnb
+
+<a href="https://holbertonschool.com"><img src="https://i.ibb.co/RyBcXY6/cherry72.png" align="right" width="200" height="200" alt="cherry72" border="0"></a>
+
+By this part of the project we not only have a console /command interpreter for
+the Holberton Airbnb clone project, that can be used to store objects in and
+retrieve objects from a JSON, but also it will has the possible to switch the
+storage engine and use SQLAlchemy.
 
 ### Supported classes:
 * BaseModel
