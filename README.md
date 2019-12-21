@@ -315,7 +315,7 @@ Update Place: (models/place.py)
 
 We updated Amenity: (models/amenity.py)
 * Amenity inherits from BaseModel and Base (respect the order)
-* Add or replace in the class Amenity:
+* Add or replace in the class `Amenity`:
     * class attribute `__tablename__`
         * represents the table name, amenities
     * class attribute name
@@ -324,13 +324,13 @@ We updated Amenity: (models/amenity.py)
     * class attribute place_amenities must represent a relationship Many-To-Many between the class Place and Amenity. Please see below more detail: place_amenity in the Place update
 Update Place: (models/place.py)
 * Add an instance of SQLAlchemy Table called place_amenity for creating the relationship Many-To-Many between Place and Amenity:
-    * table name place_amenity
+    * table name `place_amenity`
     * metadata = `Base.metadata`
     * 2 columns:
-        * place_id, a string of 60 characters foreign key of places.id, primary key in the table and never null
-        * amenity_id, a string of 60 characters foreign key of amenities.id, primary key in the table and never null
+        * `place_id`, a string of 60 characters foreign key of `places.id`, primary key in the table and never null
+        * `amenity_id`, a string of 60 characters foreign key of `amenities.id`, primary key in the table and never null
 * Update Place class:
-    * for DBStorage: class attribute amenities must represent a relationship with the class Amenity but also as secondary to place_amenity with option viewonly=False (place_amenity has been define previously)
+    * for `DBStorage`: class attribute amenities must represent a relationship with the class Amenity but also as secondary to place_amenity with option viewonly=False (place_amenity has been define previously)
     * for FileStorage:
         * Getter attribute amenities that returns the list of Amenity instances based on the attribute amenity_ids that contains all Amenity.id linked to the Place
         * Setter attribute amenities that handles append method for adding an Amenity.id to the attribute amenity_ids. This method should accept only Amenity object, otherwise, do nothing.
