@@ -91,37 +91,37 @@ Also, this new feature will be tested here only with FileStorage engine.
 
 We Wrote a script that prepares a MySQL server for the project:
 
-- A database hbnb_dev_db
-- A new user hbnb_dev (in localhost)
-- The password of hbnb_dev should be set to hbnb_dev_pwd
-- hbnb_dev should have all privileges on the database hbnb_dev_db
+- A database `hbnb_dev_db`
+- A new user `hbnb_dev` (in localhost)
+- The password of `hbnb_dev` should be set to `hbnb_dev_pwd`
+- `hbnb_dev` should have all privileges on the database `hbnb_dev_db`
   (and only this database)
-- hbnb_dev should have SELECT privilege on the database performance_schema
+- `hbnb_dev` should have SELECT privilege on the database `performance_schema`
   (and only this database)
-- If the database hbnb_dev_db or the user hbnb_dev already exists, our script
+- If the database `hbnb_dev_db` or the user `hbnb_dev` already exists, our script
   should not fail.
 
 ### MySQL setup test
 
 We wrote a script that prepares a MySQL server for the project:
 
-- A database hbnb_test_db
-- A new user hbnb_test (in localhost)
-- The password of hbnb_test should be set to hbnb_test_pwd
-  hbnb_test should have all privileges on the database hbnb_test_db (and
+- A database `hbnb_test_db`
+- A new user `hbnb_test` (in localhost)
+- The password of `hbnb_test` should be set to `hbnb_test_pwd`
+  `hbnb_test` should have all privileges on the database `hbnb_test_db` (and
   only this database)
-- hbnb_test should have SELECT privilege on the database performance_schema
+- hbnb_test should have SELECT privilege on the database `performance_schema`
   (and only this database)
-- If the database hbnb_test_db or the user hbnb_test already exists, your
+- If the database hbnb_test_db or the user `hbnb_test` already exists, your
   script should not fail
 
 ### Delete object
 
 We updated the FileStorage: (models/engine/file_storage.py)
 
-- Add a new public instance method: def delete(self, obj=None): to delete obj
-  from __objects if it’s inside
-- Update the prototype of def all(self) to def all(self, cls=None) - that
+- Add a new public instance method: `def delete(self, obj=None):` to delete obj
+  from `__objects` if it’s inside
+- Update the prototype of `def all(self) to def all(self, cls=None)` - that
   returns the list of objects of one type of class. Example below with State -
   it’s an optional filtering
 
