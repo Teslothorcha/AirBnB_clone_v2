@@ -214,6 +214,27 @@ Update __init__.py: (models/__init__.py)
         * Import FileStorage class in this file
         * Create an instance of FileStorage and store it in the variable storage (the line storage.reload() should be executed after this instantiation)
 * This “switch” will allow you to change storage type directly by using an environment variable (example below)
+	
+### 7. DBStorage - User
+
+We updated User: (models/user.py):
+* User inherits from BaseModel and Base (respect the order)
+* Add or replace in the class User:
+    * class attribute __tablename__
+        * represents the table name, users
+    * class attribute email
+        * represents a column containing a string (128 characters)
+        * can’t be null
+    * class attribute password
+        * represents a column containing a string (128 characters)
+        * can’t be null
+    * class attribute first_name
+        * represents a column containing a string (128 characters)
+        * can be null
+    * class attribute last_name
+        * represents a column containing a string (128 characters)
+        * can be null
+
 
 ## Authors
 
