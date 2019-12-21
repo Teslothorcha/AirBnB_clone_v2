@@ -133,8 +133,8 @@ In the following steps, you will make multiple changes:
 * the biggest one is the transition between FileStorage and DBStorage: In the industry, you will never find a system who can work with both in the same time - but you will find a lot of services who can manage multiple storage systems. (for example, logs service: in memory, in disk, in database, in ElasticSearch etc…) - The main concept behind is the abstraction: Make your code running without knowing how it’s stored.
 * add attributes for SQLAlchemy: they will be class attributes, like previously, with a “weird” value. Don’t worry, these values are for description and mapping to the database. If you change one of these values, or add/remove one attribute of the a model, you will have to delete the database and recreate it in SQL. (Yes it’s not optimal, but for development purposes, it’s ok. In production, we will add “migration mechanism” - for the moment, don’t spend time on it.)
 Please follow all these steps:
-Update BaseModel: (models/base_model.py)
-* Create Base = declarative_base() before the class definition of BaseModel
+Update BaseModel: `(models/base_model.py)`
+* Create Base = `declarative_base()` before the class definition of BaseModel
 * Note! BaseModel does /not/ inherit from Base. All other classes will inherit from BaseModel to get common values (id, created_at, updated_at), where inheriting from Base will actually cause SQLAlchemy to attempt to map it to a table.
 * Add or replace in the class BaseModel:
     * class attribute id
@@ -182,7 +182,7 @@ New engine DBStorage: (models/engine/db_storage.py)
     * __session: set to None
 * Public instance methods:
     * __init__(self):
-        * create the engine (self.__engine)
+        * create the `engine (self.__engine)`
         * the engine must be linked to the MySQL database and user created before (hbnb_dev and hbnb_dev_db):
             * dialect: mysql
             * driver: mysqldb
