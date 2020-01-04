@@ -30,13 +30,14 @@ def do_deploy(archive_path):
     if not os.path.exists(archive_path):
         return False
 
+    fex = archive_path.replace("versions/", "")
     file_name = archive_path.replace("versions/", "").replace(".tgz", "")
     dir_name = "/data/web_static/releases/" + file_name
 
-    put(archive_path, "/tmp/")
-    run("sudo mkdir {new_dir}/".format(new_dir=dir_name))
-    run("sudo tar -xzf /tmp/{fi} -C {di}".format(fi=file_name, di=dir_name))
-    run("sudo rm /tmp/{fi}".format(fi=file_name))
+    put(archive_path, "/tmp")
+    run("sudo mkdir -p {new_dir}/".format(new_dir=dir_name))
+    run("sudo tar -xzf /tmp/{fi} -C {di}".format(fi=fex, di=dir_name))
+    run("sudo rm /tmp/{fi}".format(fi=fex))
     run("sudo mv {di}/web_static/* {di_n}/".format(di=dir_name, di_n=dir_name))
     run("sudo rm -rf {di}/web_static".format(di=dir_name))
     run("sudo rm -rf /data/web_static/current")
