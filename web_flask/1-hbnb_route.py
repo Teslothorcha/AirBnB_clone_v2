@@ -11,6 +11,7 @@ def hello():
     """ first route message"""
     return 'Hello HBNB!'
 
+
 @app.route('/hbnb')
 def hello_hbnb():
     """ second route message"""
