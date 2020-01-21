@@ -11,10 +11,12 @@ def hello():
     """ first route message"""
     return 'Hello HBNB!'
 
+
 @app.route('/hbnb')
 def hello_hbnb():
     """ second route message"""
     return 'HBNB'
+
 
 @app.route('/c/<text>')
 def c_is_fun(text):
