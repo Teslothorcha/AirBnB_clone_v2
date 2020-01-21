@@ -34,8 +34,7 @@ def python_is_cool(text='is cool'):
 @app.route('/number/<int:n>')
 def python_is_int(n):
     """ third route message"""
-    if n.isdigit():
-        return '{} is a number'.format(n)
+    return '{} is a number'.format(n)
 
 
 if __name__ == '__main__':
