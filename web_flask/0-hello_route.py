@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 @app.route('/', strict_slashes=False)
 def hello():
+    """ first route message"""
     return f'Hello HBNB!'
 
 if __name__ == '__main__':
