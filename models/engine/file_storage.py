@@ -25,11 +25,14 @@ class FileStorage:
         Return:
             returns a dictionary of __object
         """
-        if cls is not None:
-            return {key_: vvalue_ for key_, value_ in self.__objects.items()
-                    if str(cls.__name__) in key_}
-        else:
+        if cls is None:
             return self.__objects
+        else:
+            n_d = {}
+            for key, value in self.__objects.items():
+                if type(value) == cls:
+                    n_d[key] = value
+            return n_d
 
     def new(self, obj):
         """sets __object to given obj
@@ -69,3 +72,6 @@ class FileStorage:
             key = "{}.{}".format(type(obj).__name__, obj.id)
             del self.__objects[key]
             self.save()
+
+    def close(self):
+        reload()

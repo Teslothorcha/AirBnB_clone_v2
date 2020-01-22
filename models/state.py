@@ -4,6 +4,8 @@ from models.base_model import BaseModel, Base
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from models.city import City
+import models
+import os
 
 
 class State(BaseModel, Base):
@@ -16,6 +18,12 @@ class State(BaseModel, Base):
     cities = relationship("City", cascade="all, delete, delete-orphan",
                           backref="state")
 
-    @property
-    def cities(self):
-        return(self.cities)
+    if os.environ.get('HBNB_TYPE_STORAGE') != 'db':
+        @property
+        def cities(self):
+            final = []
+            city_list = models.storage.all(City)
+            for element in city_list.values():
+                if element.state_id == self.id:
+                    final.append(element)
+                    return final
