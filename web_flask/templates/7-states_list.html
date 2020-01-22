@@ -5,10 +5,10 @@
     </HEAD>
     <BODY>
       <H1>States</H1>
-      <UL>
+        <UL>
 	{% for value in lis|sort(attribute='name') %}
 	<LI>{{ value.id }}: <B>{{ value.name }}</B></LI>
 	{% endfor %}
-      </UL>
+        </UL>
     </BODY>
 </HTML>
