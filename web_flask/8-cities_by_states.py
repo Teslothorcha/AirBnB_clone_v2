@@ -18,6 +18,7 @@ def cities_states():
     st = storage.all('State').values()
     return render_template('8-cities_by_states.html', st=st)
 
+
 @app.teardown_appcontext
 def shutdown_(self):
     storage.close()
